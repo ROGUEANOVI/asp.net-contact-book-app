@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ContactBookApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContactBookApp.Data
 {
@@ -7,5 +8,6 @@ namespace ContactBookApp.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
