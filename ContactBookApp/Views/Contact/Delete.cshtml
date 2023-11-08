@@ -1,0 +1,47 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Elimiar Contacto";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white text-center"><strong>Eliminar Contacto</strong></h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Delete" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <input asp-for="Id" type="hidden"/>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Ingrese el nombre" readonly/>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="Ingrese el telefono" readonly />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="CellPhone" class="control-label"></label>
+                        <input asp-for="CellPhone" class="form-control" placeholder="Ingrese el celular" readonly />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" placeholder="Ingrese el email" readonly />
+                    </div>
+
+                    <div class="form-group mb-3 text-center">
+                        <button type="submit" class="btn btn-lg btn-primary">Eliminar</button>
+                        <a asp-action="Index" class="btn btn-lg btn-secondary">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
