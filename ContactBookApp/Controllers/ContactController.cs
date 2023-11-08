@@ -1,24 +1,23 @@
 ﻿using ContactBookApp.Data;
 using ContactBookApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ContactBookApp.Controllers
 {
-    public class ContactControlller : Controller
+    public class ContactController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ContactControlller(ApplicationDbContext context)
+        public ContactController(ApplicationDbContext context)
         {
             _context = context;
         }
 
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Contacts.ToListAsync());
+            return View(_context.Contacts.ToList());
         }
 
 
